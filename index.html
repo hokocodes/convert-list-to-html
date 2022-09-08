@@ -8,24 +8,28 @@
   </head>
   <body>
     <textarea
-      oninput="change()"
       type="text"
       id="ingredients"
       placeholder="Enter Ingredients"
+      onchange="change()"
     ></textarea>
+ 
     <p id="list"></p>
     <script>
-      let inp = document.getElementById("ingredients").select();
-console.log(inp);
-          let result = "<ul><li>" + inp.split(/r?n/).join("</li><li>") + "</li></ul>";
-            console.log(result);
+      
+      console.log(x);
 
-          function change() {
+      console.log(result);
 
-              document.getElementById("list").textContent = result;
-
-          }
+      function change() {
+        let x = document.getElementById("ingredients").value;
+        console.log(x.split(/\n/));
+        let result =
+        "<ul><li>" + x.split(/\n/).join("</li>\n<li>") + "</li></ul>";
+        document.getElementById("list").textContent = result;
+        
+      }
     </script>
-    >
+    
   </body>
 </html>
